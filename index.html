@@ -69,7 +69,8 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" data-target="#loginModal">
+
+                <li><a id="openLoginModal">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                 </li>
             </ul>
@@ -200,7 +201,7 @@
             </div>
             <div class="col-xs-12 col-sm-2">
                 <p style="padding:40px"></p>
-                <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                <a type="button" class="btn btn-warning btn-block" id="openReserveModal">Reserve Table</a>
             </div>
         </div>
     </div>
@@ -397,11 +398,7 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
+
 <script>
     $(document).ready(function(){
         $("#mycarousel").carousel( { interval: 2000 } );
@@ -411,6 +408,15 @@
         $("#carousel-play").click(function(){
             $("#mycarousel").carousel('cycle');
         });
+
+        $('#openLoginModal').on('click', function() {
+            $('#loginModal').modal('show');
+        });
+
+        $('#openReserveModal').on('click', function () {
+            $('#reserveModal').modal('show');
+        });
+
     });
 </script>
 </body>
